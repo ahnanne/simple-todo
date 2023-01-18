@@ -1,9 +1,14 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import GlobalStyles from "./styles/globalStyles";
+
+import TodoTemplate from "./components/TodoTemplate";
 
 function App() {
-  return <div>안녕하세요!</div>;
+  return (
+    <>
+      <GlobalStyles />
+      <TodoTemplate>안녕하세요!</TodoTemplate>
+    </>
+  );
 }
 
 export default App;
