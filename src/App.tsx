@@ -2,6 +2,7 @@ import GlobalStyles from "./styles/globalStyles";
 
 import TodoTemplate from "./components/TodoTemplate";
 import TodoHead from "./components/TodoHead";
+import TodoList from "./components/TodoList";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <GlobalStyles />
       <TodoTemplate>
         <TodoHead />
+        <TodoList />
       </TodoTemplate>
     </>
   );
