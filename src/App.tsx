@@ -1,12 +1,15 @@
 import GlobalStyles from "./styles/globalStyles";
 
 import TodoTemplate from "./components/TodoTemplate";
+import TodoHead from "./components/TodoHead";
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <TodoTemplate>안녕하세요!</TodoTemplate>
+      <TodoTemplate>
+        <TodoHead />
+      </TodoTemplate>
     </>
   );
 }
