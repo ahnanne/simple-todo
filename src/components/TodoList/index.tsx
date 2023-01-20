@@ -1,7 +1,13 @@
 import * as Styled from "./index.styled";
 
-const TodoList = () => {
-  return <Styled.TodoListBlock>TODO LIST</Styled.TodoListBlock>;
+type TodoListProps = {
+  children: React.ReactNode;
+};
+
+const TodoList = (props: TodoListProps) => {
+  const { children } = props;
+
+  return <Styled.TodoListBlock>{children}</Styled.TodoListBlock>;
 };
 
 export default TodoList;

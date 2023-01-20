@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { FiTrash2, FiCheckSquare } from "react-icons/fi";
 
 export const Remove = styled.div`
   display: flex;
@@ -12,8 +11,7 @@ export const Remove = styled.div`
     color: var(--error);
   }
 
-  opacity: 0;
-  transition: opacity 300ms linear;
+  opacity: 0.5;
 `;
 
 export const CheckCircle = styled.div<{ done: boolean }>`
@@ -23,13 +21,11 @@ export const CheckCircle = styled.div<{ done: boolean }>`
   width: 32px;
   height: 32px;
   margin-right: 20px;
-  border: 1px solid var(--gray);
   font-size: 24px; // 아이콘 크기
   cursor: pointer;
   ${(props) =>
     props.done &&
     css`
-      border: 1px solid var(--green);
       color: var(--green);
     `}
 `;
