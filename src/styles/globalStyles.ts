@@ -6,9 +6,9 @@ const GlobalStyles = createGlobalStyle`
     ${reset} // Eric Meyer's Reset CSS
 
     --theme: #f26224;
-    --green: #24a148;
+    --green: #a7beae;
     --orange: #ff832b;
-    --error: #ff3500;
+    --error: #b85042;
     --disabled: #aaaaaa;
     --success: #0088ff;
     --placeholder: #999999;
@@ -45,7 +45,7 @@ const GlobalStyles = createGlobalStyle`
     --grayscale-70: #f7f3f2;
     --grayscale-80: #e5e0df;
 
-    --ivory: #f7f3f2;
+    --ivory: #e7e8d1;
     --gray: #e5e0df;
     
     --white-gradient: linear-gradient(135deg, #ffffff 0%, #e5e0df 100%);
