@@ -11,10 +11,11 @@ export const Remove = styled.div`
     color: var(--error);
   }
 
-  opacity: 0.5;
+  opacity: 0;
+  transition: all 300ms linear;
 `;
 
-export const CheckCircle = styled.div<{ done: boolean }>`
+export const Check = styled.div<{ done: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,7 +23,9 @@ export const CheckCircle = styled.div<{ done: boolean }>`
   height: 32px;
   margin-right: 20px;
   font-size: 24px; // 아이콘 크기
+  color: var(--gray);
   cursor: pointer;
+
   ${(props) =>
     props.done &&
     css`
@@ -37,7 +40,7 @@ export const Text = styled.p<{ done: boolean }>`
   ${(props) =>
     props.done &&
     css`
-      color: var(--grayscale-80);
+      text-decoration: line-through;
     `}
 `;
 
@@ -47,7 +50,7 @@ export const TodoItemBlock = styled.div`
   padding: 12px 0;
 
   &:hover {
-    &{Remove} {
+    ${Remove} {
       opacity: 1;
     }
   }
