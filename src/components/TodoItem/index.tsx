@@ -1,5 +1,5 @@
 import * as Styled from "./index.styled";
-import { FiTrash2, FiCheckSquare } from "react-icons/fi";
+import { FiTrash2, FiSquare, FiCheckSquare } from "react-icons/fi";
 
 type TodoItemProps = {
   id: number;
@@ -12,9 +12,9 @@ const TodoItem = (props: TodoItemProps) => {
 
   return (
     <Styled.TodoItemBlock>
-      <Styled.CheckCircle done={done}>
-        {done && <FiCheckSquare />}
-      </Styled.CheckCircle>
+      <Styled.Check done={done}>
+        {done ? <FiCheckSquare /> : <FiSquare />}
+      </Styled.Check>
       <Styled.Text done={done}>{text}</Styled.Text>
       <Styled.Remove>
         <FiTrash2 />
