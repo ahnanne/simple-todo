@@ -1,7 +1,10 @@
 import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
 
 const GlobalStyles = createGlobalStyle`
   body {
+    ${reset} // Eric Meyer's Reset CSS
+
     --theme: #f26224;
     --green: #24a148;
     --orange: #ff832b;
