@@ -1,18 +1,16 @@
 import * as Styled from "./index.styled";
 import TodoItem from "@/src/components/TodoItem";
 
-import { useTodoState, useTodoNextId } from "@/src/store/TodoContext";
+import { useTodoState } from "@/src/store/TodoContext";
 
 const TodoList = () => {
-  const state = useTodoState();
-  const { current: nextId } = useTodoNextId();
-
-  console.log(nextId);
+  const todos = useTodoState();
 
   return (
     <Styled.TodoListBlock>
-      <TodoItem id={1} done={true} text="청소하기" />
-      <TodoItem id={2} done={false} text="밥하기" />
+      {todos.map(({ id, done, text }) => (
+        <TodoItem key={id} id={id} done={done} text={text} />
+      ))}
     </Styled.TodoListBlock>
   );
 };
