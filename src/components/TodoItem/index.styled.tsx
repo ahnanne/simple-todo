@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const Remove = styled.div`
+export const Remove = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +15,7 @@ export const Remove = styled.div`
   transition: all 300ms linear;
 `;
 
-export const Check = styled.div<{ done: boolean }>`
+export const Check = styled.button<{ done: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
