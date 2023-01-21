@@ -1,12 +1,16 @@
 import styled, { css } from "styled-components";
 
-export const Remove = styled.button`
+export const RemoveButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--gray);
   font-size: 24px;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+
   &:hover {
     color: var(--error);
   }
@@ -15,7 +19,7 @@ export const Remove = styled.button`
   transition: all 300ms linear;
 `;
 
-export const Check = styled.button<{ done: boolean }>`
+export const CheckButton = styled.button<{ done: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,6 +29,9 @@ export const Check = styled.button<{ done: boolean }>`
   font-size: 24px; // 아이콘 크기
   color: var(--gray);
   cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 0;
 
   ${(props) =>
     props.done &&
@@ -50,7 +57,7 @@ export const TodoItemBlock = styled.div`
   padding: 12px 0;
 
   &:hover {
-    ${Remove} {
+    ${RemoveButton} {
       opacity: 1;
     }
   }

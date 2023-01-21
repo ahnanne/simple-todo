@@ -28,13 +28,13 @@ const TodoItem = (props: TodoItemProps) => {
 
   return (
     <Styled.TodoItemBlock>
-      <Styled.Check type="button" done={done} onClick={handleToggle}>
+      <Styled.CheckButton type="button" done={done} onClick={handleToggle}>
         {done ? <FiCheckSquare /> : <FiSquare />}
-      </Styled.Check>
+      </Styled.CheckButton>
       <Styled.Text done={done}>{text}</Styled.Text>
-      <Styled.Remove type="button" onClick={handleRemove}>
+      <Styled.RemoveButton type="button" onClick={handleRemove}>
         <FiTrash2 />
-      </Styled.Remove>
+      </Styled.RemoveButton>
     </Styled.TodoItemBlock>
   );
 };
