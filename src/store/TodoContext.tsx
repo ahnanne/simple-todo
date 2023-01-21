@@ -63,7 +63,7 @@ const TodoNextIdContext = createContext<MutableRefObject<number> | null>(null);
 // createContext를 통해 생성된 Context 내부에는 Provider라는 컴포넌트가 존재한다.
 export const TodoProvider = ({ children }: { children: React.ReactNode }) => {
   const [state, dispatch] = useReducer(todoReducer, initialTodos);
-  // state, dispatch 각각을 위한 컨텍스트를 만들어 준다.
+  // state, dispatch 각각을 위한 컨텍스트를 만들어 준다. (리렌더링 관련 성능 최적화 + 개발 편의성)
   // (state -> TodoStateContext, dispatch -> TodoDispatchContext)
   const nextId = useRef<number>(state.length);
 
