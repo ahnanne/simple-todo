@@ -17,7 +17,7 @@ import {
  * 5. 상태와 디스패치 각각에 대한 Context 생성하기: createContext() 호출
  * 6. (필요하다면) 추가적인 Context 생성하기: TodoNextIdContext
  * 7. Provider 구현하기: TodoProvider - 내부에서 useReducer 사용
- * 8. 각각의 Context에 대한 커스텀 훅 만들고 export하기: useContext() 호출
+ * 8. 각각의 Context에 대한 커스텀 훅 만들고 export하기: useContext() 호출 + 에러 처리
  *
  * * 참고: https://react.vlpt.us/using-typescript/04-ts-context.html
  */
@@ -78,6 +78,31 @@ export const TodoProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export const useTodoState = () => useContext(TodoStateContext);
-export const useTodoDispatch = () => useContext(TodoDispatchContext);
-export const useTodoNextId = () => useContext(TodoNextIdContext);
+const ERROR_MESSAGE = "Cannot find TodoProvider";
+export const useTodoState = () => {
+  const context = useContext(TodoStateContext);
+
+  if (!context) {
+    throw new Error(ERROR_MESSAGE);
+  }
+
+  return context;
+};
+export const useTodoDispatch = () => {
+  const context = useContext(TodoDispatchContext);
+
+  if (!context) {
+    throw new Error(ERROR_MESSAGE);
+  }
+
+  return context;
+};
+export const useTodoNextId = () => {
+  const context = useContext(TodoNextIdContext);
+
+  if (!context) {
+    throw new Error(ERROR_MESSAGE);
+  }
+
+  return context;
+};
