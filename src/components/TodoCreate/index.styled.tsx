@@ -35,7 +35,7 @@ export const InsertFormPositioner = styled.div`
   left: 0;
 `;
 
-export const InsertForm = styled.div`
+export const InsertForm = styled.form`
   background-color: var(--white);
   padding: 32px 32px 72px;
   border-bottom-left-radius: 16px;
