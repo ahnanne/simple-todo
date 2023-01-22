@@ -1,9 +1,10 @@
+import { useRecoilValue } from "recoil";
+import { todoListStats } from "@/src/recoil/todo";
+
 import * as Styled from "./index.styled";
-import { useTodoState } from "@/src/store/TodoContext";
 
 const TodoHead = () => {
-  const todos = useTodoState();
-  const undoneTasks = todos.filter((todo) => !todo.done);
+  const { totalUndoneNum } = useRecoilValue(todoListStats);
 
   const today = new Date();
 
@@ -22,7 +23,7 @@ const TodoHead = () => {
     <Styled.TodoHeadBlock>
       <h1>{dateString}</h1>
       <p className="day">{dayName}</p>
-      <p className="tasks-left">할 일 {undoneTasks.length}개 남음</p>
+      <p className="tasks-left">할 일 {totalUndoneNum}개 남음</p>
     </Styled.TodoHeadBlock>
   );
 };
