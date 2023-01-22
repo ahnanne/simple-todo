@@ -1,6 +1,6 @@
 import todoListState from "./atom";
-import todoListStats from "./todoListStats";
+import todoListStatsState from "./todoListStatsState";
 
-export { todoListStats };
+export { todoListStatsState };
 
 export default todoListState;

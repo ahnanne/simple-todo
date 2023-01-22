@@ -1,10 +1,10 @@
 import { useRecoilValue } from "recoil";
-import { todoListStats } from "@/src/recoil/todo";
+import { todoListStatsState } from "@/src/recoil/todo";
 
 import * as Styled from "./index.styled";
 
 const TodoHead = () => {
-  const { totalUndoneNum } = useRecoilValue(todoListStats);
+  const { totalUndoneNum } = useRecoilValue(todoListStatsState);
 
   const today = new Date();
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import todoListState, { todoListStats } from "@/src/recoil/todo";
+import todoListState, { todoListStatsState } from "@/src/recoil/todo";
 
 import * as Styled from "./index.styled";
 import { FiPlus } from "react-icons/fi";
@@ -9,7 +9,7 @@ const TodoCreate = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [todoText, setTodoText] = useState("");
   const setTodoList = useSetRecoilState(todoListState);
-  const { totalNum } = useRecoilValue(todoListStats);
+  const { totalNum } = useRecoilValue(todoListStatsState);
 
   const handleToggle = () => setIsOpen(!isOpen);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
