@@ -1,3 +1,4 @@
+import React from "react";
 import { useSetRecoilState } from "recoil";
 import todoListState from "@/src/state/todo";
 
@@ -40,4 +41,4 @@ const TodoItem = (props: TodoItemProps) => {
   );
 };
 
-export default TodoItem;
+export default React.memo(TodoItem);
