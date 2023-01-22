@@ -1,10 +1,11 @@
+import { useRecoilValue } from "recoil";
+import todoListState from "@/src/state/todo";
+
 import * as Styled from "./index.styled";
 import TodoItem from "@/src/components/TodoItem";
 
-import { useTodoState } from "@/src/store/TodoContext";
-
 const TodoList = () => {
-  const todos = useTodoState();
+  const todos = useRecoilValue(todoListState);
 
   return (
     <Styled.TodoListBlock>

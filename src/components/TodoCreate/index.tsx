@@ -1,15 +1,15 @@
 import React, { useState } from "react";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import todoListState, { nextIdState } from "@/src/state/todo";
 
 import * as Styled from "./index.styled";
 import { FiPlus } from "react-icons/fi";
-import { useTodoDispatch, useTodoNextId } from "@/src/store/TodoContext";
 
 const TodoCreate = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [todoText, setTodoText] = useState("");
-
-  const dispatch = useTodoDispatch();
-  const nextId = useTodoNextId();
+  const setTodoList = useSetRecoilState(todoListState);
+  const nextId = useRecoilValue(nextIdState);
 
   const handleToggle = () => setIsOpen(!isOpen);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
@@ -17,18 +17,17 @@ const TodoCreate = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    dispatch({
-      type: "CREATE",
-      todo: {
-        id: nextId.current,
+    setTodoList((prev) => [
+      ...prev,
+      {
+        id: nextId,
         text: todoText,
         done: false,
       },
-    });
+    ]);
 
     setTodoText("");
     setIsOpen(false);
-    nextId.current += 1;
   };
 
   return (

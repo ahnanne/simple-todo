@@ -1,7 +1,9 @@
 import React from "react";
+import { useSetRecoilState } from "recoil";
+import todoListState from "@/src/state/todo";
+
 import * as Styled from "./index.styled";
 import { FiTrash2, FiSquare, FiCheckSquare } from "react-icons/fi";
-import { useTodoDispatch } from "@/src/store/TodoContext";
 
 type TodoItemProps = {
   id: number;
@@ -12,23 +14,23 @@ type TodoItemProps = {
 const TodoItem = (props: TodoItemProps) => {
   const { id, done, text } = props;
 
-  const dispatch = useTodoDispatch();
+  const setTodoList = useSetRecoilState(todoListState);
 
-  const handleToggle = () =>
-    dispatch({
-      type: "TOGGLE",
-      id,
-    });
+  const handleCheckToggle = () => {
+    setTodoList((prev) =>
+      prev.map((todo) =>
+        todo.id === id ? { ...todo, done: !todo.done } : todo
+      )
+    );
+  };
 
-  const handleRemove = () =>
-    dispatch({
-      type: "REMOVE",
-      id,
-    });
+  const handleRemove = () => {
+    setTodoList((prev) => prev.filter((todo) => todo.id !== id));
+  };
 
   return (
     <Styled.TodoItemBlock>
-      <Styled.CheckButton type="button" done={done} onClick={handleToggle}>
+      <Styled.CheckButton type="button" done={done} onClick={handleCheckToggle}>
         {done ? <FiCheckSquare /> : <FiSquare />}
       </Styled.CheckButton>
       <Styled.Text done={done}>{text}</Styled.Text>
