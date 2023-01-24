@@ -1,7 +1,7 @@
 import { useRecoilValue } from "recoil";
 import { todoListStatsState } from "@/src/state/todo";
 
-import * as Styled from "./index.styled";
+import * as Styled from "./style";
 
 const TodoHead = () => {
   const { totalUndoneNum } = useRecoilValue(todoListStatsState);

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import todoListState, { nextIdState } from "@/src/state/todo";
 
-import * as Styled from "./index.styled";
+import * as Styled from "./style";
 import { FiPlus } from "react-icons/fi";
 
 const TodoCreate = () => {

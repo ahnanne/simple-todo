@@ -1,7 +1,7 @@
 import { useRecoilValue } from "recoil";
 import todoListState from "@/src/state/todo";
 
-import * as Styled from "./index.styled";
+import * as Styled from "./style";
 import TodoItem from "@/src/components/TodoItem";
 
 const TodoList = () => {

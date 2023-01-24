@@ -1,4 +1,4 @@
-import * as Styled from "./index.styled";
+import * as Styled from "./style";
 
 type TodoTemplateProps = {
   children: React.ReactNode;
