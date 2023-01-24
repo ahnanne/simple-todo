@@ -44,6 +44,8 @@
     "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
+    "@yarnpkg/pnpify": "^4.0.0-rc.11",
+    "@yarnpkg/sdks": "^3.0.0-rc.11",
     "craco-alias": "^3.0.1",
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
