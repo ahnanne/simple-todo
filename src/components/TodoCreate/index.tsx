@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import todoListState, { nextIdState } from "@/src/state/todo";
+import todoListState, { nextIdState } from "@/state/todo";
 
 import * as Styled from "./style";
 import { FiPlus } from "react-icons/fi";

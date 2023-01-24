@@ -1,5 +1,5 @@
 import { useRecoilValue } from "recoil";
-import { todoListStatsState } from "@/src/state/todo";
+import { todoListStatsState } from "@/state/todo";
 
 import * as Styled from "./style";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { useSetRecoilState } from "recoil";
-import todoListState from "@/src/state/todo";
+import todoListState from "@/state/todo";
 
 import * as Styled from "./style";
 import { FiTrash2, FiSquare, FiCheckSquare } from "react-icons/fi";
