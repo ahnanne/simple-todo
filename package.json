@@ -22,9 +22,13 @@
   },
   "packageManager": "yarn@3.3.1",
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.9",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "add": "^2.0.6",
     "axios": "^1.2.6",
     "eslint-config-react-app": "^7.0.1",
     "qs": "^6.11.0",
@@ -36,7 +40,8 @@
     "recoil": "^0.7.6",
     "styled-components": "^5.3.6",
     "styled-reset": "^4.4.5",
-    "web-vitals": "^3.1.1"
+    "web-vitals": "^3.1.1",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@craco/craco": "^7.0.0",

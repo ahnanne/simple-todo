@@ -1,10 +1,6 @@
-type ExternalLinkPros = {
-  className: string;
-  href: string;
-  children: React.ReactNode;
-};
+import { AnchorHTMLAttributes } from "react";
 
-const ExternalLink = (props: ExternalLinkPros) => {
+const ExternalLink = (props: AnchorHTMLAttributes<HTMLAnchorElement>) => {
   const { className, href, children } = props;
 
   return (
